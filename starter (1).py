@@ -15,9 +15,12 @@ def hailstone(num):
     '''
 
     # -- YOUR CODE STARTS HERE  
-    pass
-
-
+    if num == 1:
+        return [1]
+    elif num % 2 == 0:
+        return [num] + hailstone(num // 2)
+    else:
+        return [num] + hailstone(3 * num + 1)
 
 if __name__ == "__main__":
     import doctest
